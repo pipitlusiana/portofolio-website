@@ -8,6 +8,10 @@
     --text-main: #2f2f2f;
     --text-secondary: #6b6b6b;
     --card-bg: #ffffff;
+    --bg-dark: #0b1f3a;
+    --secondary: #4a90c2;
+    --text-dark: #1a1a1a;
+    --shadow-soft: 0 4px 15px rgba(0,0,0,0.08);
 }
 
 /* ===================== */
@@ -359,6 +363,7 @@ section h2 {
     background: var(--bg-soft);
     border-radius: 30px 30px 0 0;
     padding: 80px 40px;
+    margin-top: 50px;
 }
 
 .contact-container {
@@ -792,5 +797,4 @@ section h2::after {
     border-radius: 50%;
     top: -80px;
     left: -80px;
-    filter: blur(80px);
 }

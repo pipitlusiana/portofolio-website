@@ -73,22 +73,3 @@ function openModal(img) {
 function closeModal() {
     document.getElementById("imageModal").style.display = "none";
 }
-
-// Close modal when clicking outside the image
-document.getElementById("imageModal").addEventListener("click", function(e) {
-    if (e.target === this) {
-        this.style.display = "none";
-    }
-});
-
-// Close modal with Escape key
-document.addEventListener("keydown", function(e) {
-    if (e.key === "Escape") {
-        document.getElementById("imageModal").style.display = "none";
-    }
-});
-
-function toggleProject(btn) {
-    const project = btn.parentElement;
-    project.classList.toggle("active");
-}
