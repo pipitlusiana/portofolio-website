@@ -798,3 +798,72 @@ section h2::after {
     top: -80px;
     left: -80px;
 }
+
+/* ===================== */
+/* 📱 MOBILE RESPONSIVE */
+/* ===================== */
+
+@media (max-width: 768px) {
+
+    /* GLOBAL SPACING */
+    body {
+        padding: 0 15px;
+        overflow-x: hidden;
+    }
+
+    /* HERO / HOME */
+    .home-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    /* ABOUT */
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    /* IMAGE supaya gak “maksa gede” */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* SECTION TITLE */
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    /* NAVBAR (kalau ada) */
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* CARD / EXPERIENCE / PROJECT */
+    .card, .project-card, .experience-card {
+        width: 100% !important;
+        margin-bottom: 15px;
+    }
+
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
