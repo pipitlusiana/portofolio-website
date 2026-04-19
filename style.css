@@ -827,6 +827,28 @@ section h2::after {
         padding-bottom: 5px;
     }
 
+    .navbar {
+        overflow: hidden; /* biar container gak ikut geser */
+    }
+
+    .navbar ul {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;              /* scroll cuma di sini */
+        -webkit-overflow-scrolling: touch;
+
+        gap: 10px;
+        padding-bottom: 5px;
+    }
+
+    .navbar ul li {
+        flex: 0 0 auto;
+    }
+
+    .navbar ul li a {
+        white-space: nowrap;
+    }
+
     /* tiap menu item */
     .navbar ul li {
         flex: 0 0 auto;           /* biar gak nyusut */
