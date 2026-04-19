@@ -818,6 +818,25 @@ section h2::after {
         gap: 20px;
     }
 
+    .navbar ul {
+        display: flex;
+        flex-wrap: nowrap;        /* biar gak turun */
+        overflow-x: auto;         /* bisa scroll samping */
+        white-space: nowrap;      /* jaga tetap 1 baris */
+        gap: 10px;
+        padding-bottom: 5px;
+    }
+
+    /* tiap menu item */
+    .navbar ul li {
+        flex: 0 0 auto;           /* biar gak nyusut */
+    }
+
+    /* opsional: biar scrollnya halus */
+    .navbar ul {
+        scroll-behavior: smooth;
+    }
+    
     /* ABOUT */
     .about-container {
         flex-direction: column;
