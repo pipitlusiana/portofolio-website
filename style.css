@@ -847,16 +847,31 @@ section h2::after {
 
     /* NAVBAR (kalau ada) */
     nav ul {
-        flex-direction: column;
-        gap: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
     }
+section {
+    scroll-margin-top: 80px;
+}
 
     /* CARD / EXPERIENCE / PROJECT */
     .profile-grid {
     grid-template-columns: 1fr 1fr;
 }
+
+@media (max-width: 768px) {
+    .profile-grid {
+        display: flex;
+        overflow-x: auto;
+        gap: 16px;
     }
 
+    .profile-grid > * {
+        min-width: 220px;
+        flex: 0 0 auto;
+    }
 }
 
 * {
