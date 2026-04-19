@@ -909,27 +909,27 @@ section {
         display: flex;
         flex-direction: column; /* INI YANG BELUM ADA */
     }
+
+    .experience-card {
+        overflow: hidden;
+    }
+
+    .experience-card img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .experience-card p,
+    .experience-card li {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
     
 * {
     box-sizing: border-box;
 }
-
-.experience-card {
-    overflow: hidden;
-}
-
-.experience-card img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.experience-card p,
-.experience-card li {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-}
-    
+  
 html, body {
     width: 100%;
     max-width: 100%;
