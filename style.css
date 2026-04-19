@@ -852,9 +852,9 @@ section h2::after {
     }
 
     /* CARD / EXPERIENCE / PROJECT */
-    .card, .project-card, .experience-card {
-        width: 100% !important;
-        margin-bottom: 15px;
+    .profile-grid {
+    grid-template-columns: 1fr 1fr;
+}
     }
 
 }
@@ -873,4 +873,42 @@ html, body {
   flex-wrap: wrap;
   justify-content: center;
   gap: 8px;
+}
+
+.hero h1 {
+  font-size: clamp(32px, 7vw, 64px);
+  line-height: 1.2;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: clamp(18px, 4.5vw, 28px);
+}
+
+.hero p.small-text {
+  font-size: clamp(10px, 2.5vw, 14px);
+  letter-spacing: 2px;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+.card {
+  overflow: hidden;
+  padding: 16px;
+}
+
+.card p, .card li {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
