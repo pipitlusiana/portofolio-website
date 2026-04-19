@@ -856,7 +856,7 @@ section {
     scroll-margin-top: 80px;
 }
 
-    /* CARD / EXPERIENCE / PROJECT */
+    /* CARD / PROJECT */
     .profile-grid {
     grid-template-columns: 1fr 1fr;
 }
@@ -872,22 +872,26 @@ section {
         min-width: 220px;
         flex: 0 0 auto;
     }
+    .experience-card {
+    padding: 12px;
+}
+
+.experience-card h3 {
+    font-size: 1rem;
+}
+
+.experience-card p,
+.experience-card li {
+    font-size: 0.9rem;
+    line-height: 1.5;
 }
 
 * {
     box-sizing: border-box;
 }
 
-html, body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-.experience-card img {
-    width: 100%;
-    height: auto;
-    display: block;
+.experience-card {
+    overflow: hidden;
 }
 
 .experience-card img {
@@ -898,6 +902,13 @@ html, body {
 
 .experience-card p,
 .experience-card li {
-    font-size: 14px;
-    line-height: 1.6;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
+    
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
