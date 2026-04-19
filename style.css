@@ -868,3 +868,9 @@ html, body {
     max-width: 100%;
     overflow-x: hidden;
 }
+
+.navbar {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
