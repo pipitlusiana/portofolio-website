@@ -1354,53 +1354,100 @@ html, body {
 
 }
 
-/* =========================
-   FREELANCE PROJECTS
-========================= */
+/* =========================================================
+   FREELANCE PROJECTS — redesigned
+   Theme: technical drawing / survey documentation, in the
+   site's existing navy (#17395f / #24466b) & cream palette.
+========================================================= */
 
 #freelance {
-    padding: 100px 5%;
-    background: #f7f4ee;
+    --fl-navy: #17395f;
+    --fl-navy-mid: #24466b;
+    --fl-cream: #f7f4ee;
+    --fl-paper: #ffffff;
+    --fl-ink: #37424c;
+    --fl-ink-soft: #6b7480;
+    --fl-line: #e3ddd0;
+    --fl-line-soft: #edf1f4;
+    --fl-water: #3f7ea6;
+    --fl-radius: 16px;
+
+    position: relative;
+    box-sizing: border-box;
+    padding: 110px 5% 120px;
+    background: var(--fl-cream);
+    overflow: hidden;
 }
 
+#freelance *,
+#freelance *::before,
+#freelance *::after {
+    box-sizing: border-box;
+}
+
+/* faint blueprint grid, ties the section to technical drawings */
+#freelance::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(var(--fl-line-soft) 1px, transparent 1px),
+        linear-gradient(90deg, var(--fl-line-soft) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 90%);
+    opacity: 0.6;
+    pointer-events: none;
+}
 
 /* =========================
    SECTION HEADING
 ========================= */
 
 .freelance-heading {
+    position: relative;
     max-width: 1100px;
-    margin: 0 auto 50px;
+    margin: 0 auto 56px;
 }
 
 .freelance-label {
-    display: block;
-    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 2px;
+    margin-bottom: 12px;
 
-    color: #24466b;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    color: var(--fl-navy-mid);
+}
+
+.freelance-label::before {
+    content: "";
+    width: 22px;
+    height: 1px;
+    background: var(--fl-navy-mid);
 }
 
 .freelance-heading h2 {
     position: relative;
-
     display: inline-block;
 
     margin: 0;
-    padding-bottom: 12px;
+    padding-bottom: 14px;
 
-    font-size: 38px;
-    line-height: 1.2;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
 
-    color: #17395f;
+    color: var(--fl-navy);
 }
 
 .freelance-heading h2::after {
     content: "";
-
     position: absolute;
     left: 0;
     bottom: 0;
@@ -1408,36 +1455,33 @@ html, body {
     width: 65px;
     height: 3px;
 
-    background: #17395f;
+    background: var(--fl-navy);
     border-radius: 5px;
 }
 
 .freelance-heading p {
-    max-width: 700px;
-
-    margin: 18px 0 0;
+    max-width: 620px;
+    margin: 20px 0 0;
 
     font-size: 16px;
     line-height: 1.7;
 
-    color: #6b7280;
+    color: var(--fl-ink-soft);
 }
-
 
 /* =========================
    PROJECT GRID
 ========================= */
 
 .freelance-grid {
+    position: relative;
     max-width: 1100px;
     margin: 0 auto;
 
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 22px;
 }
-
 
 /* =========================
    PROJECT CARD
@@ -1446,53 +1490,60 @@ html, body {
 .freelance-card {
     position: relative;
 
-    padding: 30px;
+    display: flex;
+    flex-direction: column;
 
-    min-height: 330px;
+    padding: 32px 32px 26px;
 
-    background: #ffffff;
+    background: var(--fl-paper);
+    border: 1px solid var(--fl-line);
+    border-radius: var(--fl-radius);
 
-    border: 1px solid #e7e2da;
-    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(23, 57, 95, 0.05);
 
-    box-shadow: 0 5px 20px rgba(40, 55, 70, 0.04);
-
-    overflow: hidden;
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        border-color 0.3s ease;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.35s ease,
+                border-color 0.35s ease;
 }
 
-
-/* TOP LINE */
+/* corner survey marks — the section's signature detail,
+   evoking site-plan / drawing crop marks */
+.freelance-card::before,
+.freelance-card::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-top: 2px solid var(--fl-navy-mid);
+    opacity: 0;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
 
 .freelance-card::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 4px;
-
-    background: #24466b;
+    top: 12px;
+    left: 12px;
+    border-left: 2px solid var(--fl-navy-mid);
+    transform: translate(4px, 4px);
 }
 
-
-/* HOVER */
+.freelance-card::after {
+    top: 12px;
+    right: 12px;
+    border-right: 2px solid var(--fl-navy-mid);
+    transform: translate(-4px, 4px);
+}
 
 .freelance-card:hover {
-    transform: translateY(-5px);
-
-    border-color: #d8d8d8;
-
-    box-shadow: 0 14px 35px rgba(40, 55, 70, 0.09);
+    transform: translateY(-6px);
+    border-color: #d3cdbf;
+    box-shadow: 0 20px 40px rgba(23, 57, 95, 0.1);
 }
 
+.freelance-card:hover::before,
+.freelance-card:hover::after {
+    opacity: 1;
+    transform: translate(0, 0);
+}
 
 /* =========================
    CARD TOP
@@ -1503,88 +1554,106 @@ html, body {
     justify-content: space-between;
     align-items: center;
 
-    margin-bottom: 25px;
+    margin-bottom: 22px;
 }
 
 .project-number {
-    font-size: 14px;
+    font-family: "SF Mono", "Courier New", monospace;
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: 1px;
 
-    color: #24466b;
+    color: var(--fl-navy-mid);
+}
+
+.project-number::before {
+    content: "NO. ";
+    color: #a9b1ba;
+    font-weight: 600;
 }
 
 .project-year {
-    padding: 5px 11px;
+    padding: 5px 12px;
 
-    font-size: 13px;
+    font-family: "SF Mono", "Courier New", monospace;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 
-    color: #6b7280;
+    color: var(--fl-navy-mid);
 
-    background: #f5f6f7;
-
+    background: var(--fl-line-soft);
+    border: 1px solid var(--fl-line);
     border-radius: 20px;
 }
-
 
 /* =========================
    PROJECT ICON
 ========================= */
 
 .project-icon {
-    width: 38px;
-    height: 38px;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 
-    font-size: 18px;
+    color: var(--fl-paper);
 
-    color: #24466b;
-
-    background: #eef3f7;
-
-    border-radius: 50%;
+    background: linear-gradient(135deg, var(--fl-navy-mid), var(--fl-water));
+    border-radius: 12px;
 }
 
+.project-icon svg {
+    width: 20px;
+    height: 20px;
+}
 
 /* =========================
    PROJECT TITLE
 ========================= */
 
 .freelance-card h3 {
-    margin: 0 0 12px;
+    margin: 0 0 10px;
 
-    font-size: 20px;
-    line-height: 1.45;
-
+    font-size: 19px;
+    line-height: 1.4;
     font-weight: 700;
+    letter-spacing: -0.2px;
 
-    color: #263746;
+    color: var(--fl-navy);
 }
-
 
 /* =========================
    CATEGORY
 ========================= */
 
 .project-category {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 
     margin-bottom: 16px;
 
     font-size: 11px;
     font-weight: 700;
-
-    letter-spacing: 0.8px;
+    letter-spacing: 0.6px;
     text-transform: uppercase;
 
-    color: #24466b;
+    color: var(--fl-water);
 }
 
+.project-category::before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--fl-water);
+}
 
 /* =========================
    DESCRIPTION
@@ -1592,45 +1661,46 @@ html, body {
 
 .freelance-card > p {
     margin: 0;
+    flex-grow: 1;
 
-    font-size: 15px;
-    line-height: 1.65;
+    font-size: 14.5px;
+    line-height: 1.7;
 
-    color: #68727c;
+    color: var(--fl-ink-soft);
 }
 
-
 /* =========================
-   ROLE
+   ROLE / TITLE BLOCK
+   styled like a drawing title block
 ========================= */
 
 .project-role {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr;
     align-items: center;
-    gap: 12px;
+    gap: 4px 14px;
 
     margin-top: 24px;
     padding-top: 16px;
 
-    border-top: 1px solid #eeeeee;
+    border-top: 1px dashed var(--fl-line);
 }
 
 .project-role span {
     font-size: 10px;
     font-weight: 700;
-
     letter-spacing: 1.5px;
+    text-transform: uppercase;
 
-    color: #9aa0a6;
+    color: #a9b1ba;
 }
 
 .project-role strong {
     font-size: 13px;
     font-weight: 600;
 
-    color: #394957;
+    color: var(--fl-ink);
 }
-
 
 /* =========================
    MOBILE
@@ -1639,11 +1709,15 @@ html, body {
 @media (max-width: 768px) {
 
     #freelance {
-        padding: 70px 6%;
+        padding: 76px 6% 84px;
+    }
+
+    #freelance::before {
+        background-size: 36px 36px;
     }
 
     .freelance-heading {
-        margin-bottom: 35px;
+        margin-bottom: 38px;
     }
 
     .freelance-heading h2 {
@@ -1660,8 +1734,7 @@ html, body {
     }
 
     .freelance-card {
-        min-height: auto;
-        padding: 25px;
+        padding: 26px 24px 22px;
     }
 
     .freelance-card h3 {
@@ -1672,3 +1745,4 @@ html, body {
         font-size: 14px;
     }
 }
+
