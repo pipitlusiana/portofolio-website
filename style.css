@@ -1354,3 +1354,121 @@ html, body {
 
 }
 
+    /* =========================
+   FREELANCE PROJECTS
+========================= */
+
+#freelance {
+    padding: 80px 5%;
+}
+
+#freelance h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.freelance-list {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.freelance-item {
+    padding: 0 0 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #ddd;
+}
+
+.freelance-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 30px;
+}
+
+.freelance-header h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+    color: #333;
+}
+
+.freelance-year {
+    font-size: 20px;
+    font-style: italic;
+    color: #666;
+    white-space: nowrap;
+}
+
+.freelance-item p {
+    margin: 8px 0 0 50px;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #444;
+}
+
+@media (max-width: 768px) {
+
+    #freelance {
+        padding: 60px 6%;
+    }
+
+    #freelance h2 {
+        font-size: 30px;
+    }
+
+    .freelance-header {
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .freelance-header h3 {
+        font-size: 19px;
+    }
+
+    .freelance-year {
+        font-size: 16px;
+    }
+
+    .freelance-item p {
+        margin-left: 0;
+        font-size: 16px;
+    }
+}
+
+.freelance-content {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-top: 12px;
+}
+
+.freelance-content img {
+    width: 180px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.freelance-content img:hover {
+    transform: scale(1.03);
+}
+
+.freelance-content p {
+    margin: 0;
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+
+    .freelance-content {
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .freelance-content img {
+        width: 130px;
+        height: 85px;
+    }
+}
