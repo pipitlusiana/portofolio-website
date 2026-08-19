@@ -1359,63 +1359,105 @@ html, body {
 ========================= */
 
 #freelance {
-    padding: 90px 5%;
-    background: #fafafa;
+    padding: 100px 5%;
+    background: #f7f4ee;
 }
 
-/* SECTION HEADING */
 
-.section-heading {
+/* =========================
+   SECTION HEADING
+========================= */
+
+.freelance-heading {
     max-width: 1100px;
     margin: 0 auto 50px;
 }
 
-.section-label {
-    display: inline-block;
-    margin-bottom: 10px;
+.freelance-label {
+    display: block;
+    margin-bottom: 8px;
+
     font-size: 13px;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 2px;
-    color: #777;
+
+    color: #24466b;
 }
 
-#freelance h2 {
+.freelance-heading h2 {
+    position: relative;
+
+    display: inline-block;
+
     margin: 0;
+    padding-bottom: 12px;
+
     font-size: 38px;
     line-height: 1.2;
-    color: #333;
+
+    color: #17395f;
 }
 
-.section-heading > p {
-    max-width: 650px;
-    margin: 15px 0 0;
+.freelance-heading h2::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 65px;
+    height: 3px;
+
+    background: #17395f;
+    border-radius: 5px;
+}
+
+.freelance-heading p {
+    max-width: 700px;
+
+    margin: 18px 0 0;
+
     font-size: 16px;
     line-height: 1.7;
-    color: #666;
+
+    color: #6b7280;
 }
 
 
-/* PROJECT LIST */
+/* =========================
+   PROJECT GRID
+========================= */
 
-.freelance-list {
+.freelance-grid {
     max-width: 1100px;
     margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 22px;
 }
 
 
-/* PROJECT CARD */
+/* =========================
+   PROJECT CARD
+========================= */
 
-.freelance-item {
-    display: grid;
-    grid-template-columns: 70px 1fr;
-    gap: 30px;
+.freelance-card {
+    position: relative;
 
-    padding: 32px 35px;
-    margin-bottom: 18px;
+    padding: 30px;
 
-    background: #fff;
-    border: 1px solid #e8e8e8;
-    border-radius: 12px;
+    min-height: 330px;
+
+    background: #ffffff;
+
+    border: 1px solid #e7e2da;
+    border-radius: 14px;
+
+    box-shadow: 0 5px 20px rgba(40, 55, 70, 0.04);
+
+    overflow: hidden;
 
     transition:
         transform 0.3s ease,
@@ -1423,103 +1465,170 @@ html, body {
         border-color 0.3s ease;
 }
 
-.freelance-item:hover {
-    transform: translateY(-3px);
-    border-color: #d5d5d5;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+
+/* TOP LINE */
+
+.freelance-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: #24466b;
 }
 
 
-/* NUMBER */
+/* HOVER */
 
-.freelance-number {
-    font-size: 17px;
-    font-weight: 700;
-    color: #999;
-    padding-top: 3px;
+.freelance-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #d8d8d8;
+
+    box-shadow: 0 14px 35px rgba(40, 55, 70, 0.09);
 }
 
 
-/* MAIN CONTENT */
+/* =========================
+   CARD TOP
+========================= */
 
-.freelance-main {
-    min-width: 0;
-}
-
-
-/* HEADER */
-
-.freelance-header {
+.freelance-card-top {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    gap: 25px;
+    align-items: center;
+
+    margin-bottom: 25px;
 }
 
-.freelance-header h3 {
-    margin: 0;
-    font-size: 21px;
-    line-height: 1.45;
+.project-number {
+    font-size: 14px;
     font-weight: 700;
-    color: #333;
+    letter-spacing: 1px;
+
+    color: #24466b;
 }
 
-.freelance-year {
-    flex-shrink: 0;
-    font-size: 15px;
-    color: #888;
-    font-style: italic;
-}
+.project-year {
+    padding: 5px 11px;
 
-
-/* PROJECT TYPE */
-
-.freelance-type {
-    margin: 7px 0 14px;
     font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+
+    color: #6b7280;
+
+    background: #f5f6f7;
+
+    border-radius: 20px;
+}
+
+
+/* =========================
+   PROJECT ICON
+========================= */
+
+.project-icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+    font-size: 18px;
+
+    color: #24466b;
+
+    background: #eef3f7;
+
+    border-radius: 50%;
+}
+
+
+/* =========================
+   PROJECT TITLE
+========================= */
+
+.freelance-card h3 {
+    margin: 0 0 12px;
+
+    font-size: 20px;
+    line-height: 1.45;
+
+    font-weight: 700;
+
+    color: #263746;
+}
+
+
+/* =========================
+   CATEGORY
+========================= */
+
+.project-category {
+    display: inline-block;
+
+    margin-bottom: 16px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 0.8px;
     text-transform: uppercase;
-    color: #888;
+
+    color: #24466b;
 }
 
 
-/* DESCRIPTION */
+/* =========================
+   DESCRIPTION
+========================= */
 
-.freelance-description {
-    max-width: 850px;
+.freelance-card > p {
     margin: 0;
-    font-size: 16px;
-    line-height: 1.7;
-    color: #555;
+
+    font-size: 15px;
+    line-height: 1.65;
+
+    color: #68727c;
 }
 
 
-/* ROLE */
+/* =========================
+   ROLE
+========================= */
 
-.freelance-role {
+.project-role {
     display: flex;
     align-items: center;
     gap: 12px;
 
-    margin-top: 18px;
-    padding-top: 15px;
+    margin-top: 24px;
+    padding-top: 16px;
 
-    border-top: 1px solid #eee;
-
-    font-size: 14px;
+    border-top: 1px solid #eeeeee;
 }
 
-.freelance-role span {
-    font-size: 11px;
+.project-role span {
+    font-size: 10px;
     font-weight: 700;
+
     letter-spacing: 1.5px;
-    color: #999;
+
+    color: #9aa0a6;
 }
 
-.freelance-role strong {
+.project-role strong {
+    font-size: 13px;
     font-weight: 600;
-    color: #444;
+
+    color: #394957;
 }
 
 
@@ -1530,54 +1639,36 @@ html, body {
 @media (max-width: 768px) {
 
     #freelance {
-        padding: 65px 6%;
+        padding: 70px 6%;
     }
 
-    .section-heading {
+    .freelance-heading {
         margin-bottom: 35px;
     }
 
-    #freelance h2 {
+    .freelance-heading h2 {
         font-size: 30px;
     }
 
-    .section-heading > p {
+    .freelance-heading p {
         font-size: 15px;
     }
 
-    .freelance-item {
+    .freelance-grid {
         grid-template-columns: 1fr;
-        gap: 12px;
-        padding: 25px 22px;
+        gap: 18px;
     }
 
-    .freelance-number {
-        font-size: 14px;
+    .freelance-card {
+        min-height: auto;
+        padding: 25px;
     }
 
-    .freelance-header {
-        gap: 12px;
-    }
-
-    .freelance-header h3 {
+    .freelance-card h3 {
         font-size: 18px;
     }
 
-    .freelance-year {
+    .freelance-card > p {
         font-size: 14px;
-    }
-
-    .freelance-type {
-        font-size: 11px;
-    }
-
-    .freelance-description {
-        font-size: 15px;
-    }
-
-    .freelance-role {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 4px;
     }
 }
