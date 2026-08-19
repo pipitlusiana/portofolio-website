@@ -1083,3 +1083,147 @@ html, body {
     overflow-x: hidden;
 }
 
+    /* ===================== */
+/* FIX SKILLS & CONTACT */
+/* ===================== */
+
+/* Skills harus memenuhi satu baris */
+#skills {
+    grid-column: 1 / -1;
+    width: 100%;
+}
+
+/* Container skills dibuat 3 kolom */
+#skills .skills-container {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr 1fr;
+    gap: 22px;
+    width: 100%;
+    align-items: stretch;
+}
+
+
+/* ===================== */
+/* SKILL CARD */
+/* ===================== */
+
+#skills .skill-group {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 25px;
+}
+
+
+/* ===================== */
+/* EXPERTISE & PROFESSIONAL */
+/* ===================== */
+
+#skills .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+#skills .skill-tags span {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 18px;
+    background: #f7f8fa;
+    border: 1px solid #e2e5e9;
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+
+/* ===================== */
+/* SOFTWARE */
+/* ===================== */
+
+#skills .software-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+#skills .software-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+
+    padding: 10px;
+    background: #ffffff;
+    border: 1px solid #e5e7ea;
+    border-radius: 10px;
+}
+
+#skills .software-card img {
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px;
+    max-width: 38px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+#skills .software-card div {
+    min-width: 0;
+}
+
+#skills .software-card strong {
+    display: block;
+    font-size: 13px;
+    line-height: 1.3;
+    color: #263746;
+}
+
+#skills .software-card small {
+    display: block;
+    font-size: 10px;
+    line-height: 1.3;
+    color: #7b8794;
+}
+
+
+/* ===================== */
+/* CONTACT DI BAWAH SKILLS */
+/* ===================== */
+
+#contact {
+    grid-column: 1 / -1;
+    width: 100%;
+    margin-top: 30px;
+}
+
+
+/* ===================== */
+/* RESPONSIVE */
+/* ===================== */
+
+@media (max-width: 1000px) {
+
+    #skills .skills-container {
+        grid-template-columns: 1fr;
+    }
+
+    #skills .software-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    #skills .software-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #skills .skill-group {
+        padding: 20px;
+    }
+}
